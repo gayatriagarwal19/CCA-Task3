@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="">
+        <div class="container">
+            <h1 class="">Add A New ToDo</h1>
+            <div class="">
+                <input type="text" id="Title" placeholder="Enter Title"><br> <br>
+                <input type="text" id="Task" placeholder="Enter Task"><br><br>
+                <button class="btn" id="addNameButton">Submit</button>
+            </div>
+        </div>
+        <div class="list">
+            <ul id="listOfTask"></ul>
+        </div>
+    </div>
+    <script>
+        var givenTitle = document.querySelector('#Title')
+        var givenTask = document.querySelector('#Task')
+        var btnClass = document.querySelector('#addNameButton')
+        var listOfTask = document.querySelector('#listOfTask')
+        btnClass.addEventListener('click', () => {
+            var actualTask = givenTask.value
+            var actualTitle = givenTitle.value
+            if (actualTask.length != 0 && actualTitle.length != 0) {
+                var createAnHTMLList = `<li class=""><div>${actualTitle}</div><div>${actualTask}</div><button
+                onclick="removeTaskFromTheList(this)">Remove</button>`
+                listOfTask.innerHTML += createAnHTMLList
+                givenTask.value = ''
+                givenTitle.value = ''
+                givenTask.classList.remove('red')
+                givenTitle.classList.remove('red')
+            } else
+            {
+                givenTask.classList.add('red')
+                givenTitle.classList.add('red')
+            }
+        })
+        function removeTaskFromTheList(e){
+            e.parentElement.remove()
+        }
+    </script>
+</body>
+
+</html>
