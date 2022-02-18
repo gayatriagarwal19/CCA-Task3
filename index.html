@@ -39,7 +39,11 @@
                 givenTitle.value = ''
                 givenTask.classList.remove('red')
                 givenTitle.classList.remove('red')
-            } else
+            
+            }else if(actualTask.length === 0 || actualTitle.length === 0){
+                alert("You must write something!");
+            } 
+            else
             {
                 givenTask.classList.add('red')
                 givenTitle.classList.add('red')
