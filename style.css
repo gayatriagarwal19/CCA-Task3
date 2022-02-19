@@ -1,7 +1,7 @@
 .container{
     background-color: antiquewhite;
     margin: auto;
-    text-align: center;
+    
     width: 60%;
     border: 2px solid red;
 }
@@ -10,14 +10,7 @@ h3{
     text-align: center;
 }
 
-.btn{
-    margin-bottom: 4px;
+#btn{
+    margin-bottom: 6px;
 }
 
-.list{
-    background-color: antiquewhite;
-    margin: auto;
-    width: 60%;
-    border: 2px solid red;
-    margin-top: 5px;
-}
